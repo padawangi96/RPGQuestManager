@@ -9,8 +9,8 @@ package com.padawangi.rpgquestmanager.quest;
  * @author Padawangi
  */
 import com.padawangi.rpgquestmanager.quest.Quest;
-import com.padawangi.rpgquestmanager.repository.QuestElasticSearchRepository;
-import com.padawangi.rpgquestmanager.quest.QuestRepository;
+//import com.padawangi.rpgquestmanager.repository.QuestElasticSearchRepository;
+import com.padawangi.rpgquestmanager.jpa.QuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,8 +30,8 @@ public class QuestService {
     @Autowired
     private QuestRepository questRepository;
     
-    @Autowired
-    private QuestElasticSearchRepository questElasticsearchRepository;
+//    @Autowired
+//    QuestElasticSearchRepository questElasticsearchRepository;
     
     @Autowired
     private ElasticsearchRestTemplate elasticsearchTemplate;
@@ -41,13 +41,13 @@ public class QuestService {
             throw new RuntimeException("Quest with ID " + quest.getId() + " already exists.");
         }
         Quest savedQuest = questRepository.save(quest);
-        questElasticsearchRepository.save(savedQuest);
+        //questElasticsearchRepository.save(savedQuest);
         return savedQuest;
     }
     
     public Quest saveQuest(Quest quest) {
         Quest savedQuest = questRepository.save(quest);
-        questElasticsearchRepository.save(savedQuest);
+        //questElasticsearchRepository.save(savedQuest);
         return savedQuest;
     }
 

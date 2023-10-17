@@ -4,6 +4,7 @@ package com.padawangi.rpgquestmanager.player;
  *
  * @author Padawangi
  */
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.padawangi.rpgquestmanager.quest.Quest;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

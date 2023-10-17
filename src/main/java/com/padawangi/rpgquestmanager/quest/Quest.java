@@ -8,6 +8,7 @@ package com.padawangi.rpgquestmanager.quest;
  *
  * @author Padawangi
  */
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.padawangi.rpgquestmanager.player.Player;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +37,7 @@ public class Quest {
     
     private int rewardPoints;
     
+    @JsonIgnore
     @ManyToMany(mappedBy = "quests")
     private List<Player> players;
 

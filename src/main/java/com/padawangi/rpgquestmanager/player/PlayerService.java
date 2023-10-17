@@ -10,8 +10,8 @@ package com.padawangi.rpgquestmanager.player;
  */
 import com.padawangi.rpgquestmanager.player.Player;
 import com.padawangi.rpgquestmanager.quest.Quest;
-import com.padawangi.rpgquestmanager.player.PlayerRepository;
-import com.padawangi.rpgquestmanager.quest.QuestRepository;
+import com.padawangi.rpgquestmanager.jpa.PlayerRepository;
+import com.padawangi.rpgquestmanager.jpa.QuestRepository;
 import com.padawangi.rpgquestmanager.service.KafkaProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

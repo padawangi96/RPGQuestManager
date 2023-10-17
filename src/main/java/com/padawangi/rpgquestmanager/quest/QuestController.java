@@ -8,7 +8,7 @@ package com.padawangi.rpgquestmanager.quest;
  *
  * @author Padawangi
  */
-import com.padawangi.rpgquestmanager.repository.QuestElasticSearchRepository;
+//import com.padawangi.rpgquestmanager.repository.QuestElasticSearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,10 +19,10 @@ import java.util.List;
 public class QuestController {
 
     @Autowired
-    private QuestService questService;
+    QuestService questService;
     
-    @Autowired
-    private QuestElasticSearchRepository questElasticsearchRepository;
+//    @Autowired
+//    QuestElasticSearchRepository questElasticsearchRepository;
 
     @PostMapping
     public Quest createQuest(@RequestBody Quest quest) {
