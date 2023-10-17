@@ -16,17 +16,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Entity
+@Table(name = "quests")
 @Document(indexName = "quest")
 public class Quest {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "quest_seq")
+    @SequenceGenerator(name = "quest_seq", sequenceName = "quest_seq", allocationSize = 1)
     private Long id;
     
     @Field(type = FieldType.Text)
